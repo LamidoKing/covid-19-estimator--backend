@@ -1,0 +1,36 @@
+{
+  "name": "covid-19-estimator--backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:LamidoKing/covid-19-estimator--backend.git",
+  "author": "lamido <kinglamido@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8",
+    "yarn": "1.x"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon",
+    "lint": "eslint 'src/**/*.js' 'spec/**/*.js' --fix",
+    "test": "./node_modules/.bin/jasmine-node spec"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "js2xmlparser": "^4.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.5",
+    "jest": "^25.3.0",
+    "lint-staged": "^10.1.3",
+    "nodemon": "^2.0.3",
+    "prettier": "^2.0.4",
+    "pretty-quick": "^2.0.1"
+  }
+}
