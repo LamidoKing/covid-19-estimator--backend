@@ -12,8 +12,7 @@ const createApp = () => {
       const data = await covid19ImpactEstimator(req.body);
 
       return res.status(200).json({
-        status: 'success',
-        data
+        ...data
       });
     } catch (error) {
       return res.status(400).json({
