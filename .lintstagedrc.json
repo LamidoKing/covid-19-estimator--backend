@@ -1,0 +1,5 @@
+{
+  "*.+(js)": ["pretty-quick --staged", "eslint --fix", "git add"],
+
+  "*.+(json|md)": ["prettier --write", "git add"]
+}
