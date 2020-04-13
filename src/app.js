@@ -6,6 +6,7 @@ const createApp = () => {
   const app = express();
 
   app.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
 
   app.post('/api/v1/on-covid-19', async (req, res) => {
     try {
