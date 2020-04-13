@@ -87,9 +87,16 @@ const createApp = () => {
     try {
       res.setHeader('Content-Type', 'text/plain');
 
-      return fs.readFile('./logs.txt', (err, data) => {
-        res.status(200).send(data);
-      });
+      return fs.readFile(
+        path.join(__dirname, 'logs.txt'),
+        'utf8',
+        (err, data) => {
+          if (err) {
+            return res.send(err);
+          }
+          return res.status(200).send(data);
+        }
+      );
     } catch (error) {
       return res.status(400).json({
         status: 'error',
