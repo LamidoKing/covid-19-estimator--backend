@@ -1,5 +1,5 @@
 const express = require('express');
-const js2xmlparser = require('js2xmlparser');
+const convert = require('xml-js');
 const covid19ImpactEstimator = require('./covid-19/estimator');
 
 const createApp = () => {
@@ -42,7 +42,9 @@ const createApp = () => {
     try {
       const data = await covid19ImpactEstimator(req.body);
 
-      const xmlData = js2xmlparser.parse('xml', data);
+      const options = { compact: true, ignoreComment: true, spaces: 4 };
+
+      const xmlData = await convert.json2xml(data, options);
 
       return res.status(200).type('application/xml').send(xmlData);
     } catch (error) {
