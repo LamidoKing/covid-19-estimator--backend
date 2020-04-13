@@ -29,7 +29,7 @@ const createApp = () => {
           tokens.url(req, res),
           tokens.status(req, res),
           resTime
-        ].join('\t\t');
+        ].join(' ');
 
         return `${log}ms`;
       },
@@ -88,10 +88,6 @@ const createApp = () => {
       res.setHeader('Content-Type', 'text/plain');
 
       return fs.readFile('./logs.txt', (err, data) => {
-        if (err) {
-          res.send(err);
-          return;
-        }
         res.status(200).send(data);
       });
     } catch (error) {
