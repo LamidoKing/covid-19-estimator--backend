@@ -27,8 +27,7 @@ const createApp = () => {
       const data = await covid19ImpactEstimator(req.body);
 
       return res.status(200).json({
-        status: 'success',
-        data
+        ...data
       });
     } catch (error) {
       return res.status(400).json({
@@ -42,9 +41,9 @@ const createApp = () => {
     try {
       const data = await covid19ImpactEstimator(req.body);
 
-      const xmlData = js2xmlparser.parse('a', data);
+      const xmlData = js2xmlparser.parse('xml', data);
 
-      return res.status(200).send(xmlData);
+      return res.status(200).type('application/xml').send(xmlData);
     } catch (error) {
       return res.status(400).json({
         status: 'error',
