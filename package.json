@@ -16,7 +16,7 @@
     "test": "./node_modules/.bin/jasmine-node spec"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "js2xmlparser": "^4.0.1"
   },
   "devDependencies": {
